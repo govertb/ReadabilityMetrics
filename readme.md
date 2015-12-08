@@ -3,7 +3,7 @@ Readability Metrics
 
 A certain graph can be less or more 'readable'; information contained in a graph can be percepted with a degree ease. In order to quantify to which degree a certain graph is 'readable', we defined a set of five so called readability metrics. The metrics are developed as plugins for the network visualization tool called Gephi.  See [the Gephi Wiki](https://github.com/gephi/gephi/wiki/Plugin-Quick-Start "Gephi Plugin Quick Start") for information on how to install these.  
 
-**Readability metrics:**
+**Readability metrics:**  
 - No. of edge-crossings  
 - Edge-length variability  
 - Placement variability  
