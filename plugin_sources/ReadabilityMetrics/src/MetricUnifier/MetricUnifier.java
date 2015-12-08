@@ -1,63 +1,63 @@
 package MetricUnifier;
 
-import EdgeCrossings.EdgeCrossingsMetric;
-import ModularityMetric.ModularityMetric;
-import NodeOverlap.*;
-import EdgeLength.*;
-import NodeDistances.*;
-import NodeDistribution.NodeDistributionMetric;
-
+import EdgeLengthVariability.EdgeLengthVariability;
+import NeighborSeparation.NeighborSeparation;
+import NumEdgeCrossings.NumEdgeCrossings;
+import CommunityBlend.CommunityBlend;
+import PlacementVariability.PlacementVariability;
 import org.gephi.data.attributes.api.AttributeModel;
 import org.gephi.graph.api.GraphModel;
 import org.gephi.statistics.spi.Statistics;
-import org.gephi.utils.longtask.spi.LongTask;
-import org.gephi.utils.progress.ProgressTicket;
 
+/*  Benjamin Versteeg & Govert Brinkman (2015)
+    This plugin simply joins the following five readability metric plugins together:
+        - Edge length variability
+        - No. of edge crossings
+        - Placement variability
+        - Neighbor separation
+        - Community blend
 
-class MetricUnifier implements Statistics, LongTask {
-    private boolean cancel = false;
-    ProgressTicket progressTicket;
+    This allows a sequential execution, which might be convenient in case of 
+    high repetition or a large graph (long waiting time).
+*/
+
+class MetricUnifier implements Statistics {
     public String result;
     
     @Override
     public void execute(GraphModel gm, AttributeModel am) {
-        Statistics[] metrics = new Statistics[] {
-            new EdgeLengthsMetric(), 
-            new EdgeCrossingsMetric(),
-            new NodeDistancesMetric(),
-            new NodeDistributionMetric(),
-            new ModularityMetric()
-        };
-        String[] metric_result_prefixes = {
-            "Edge length standard deviation: ",
-            "Edge crossings: ",
-            "",
-            "Node distribution: ",
-            "Modularity separation: "
+        // Readability metric classes/instances to execute:
+        Statistics[] metricInstances = new Statistics[] {
+            new EdgeLengthVariability(), 
+            new NumEdgeCrossings(),
+            new PlacementVariability(),
+            new NeighborSeparation(),
+            new CommunityBlend()
         };
         
-        result = "";
-        for (int metric_i = 0; metric_i < metrics.length; metric_i++) {
-            Statistics metric = metrics[metric_i];
-            System.out.println("Executing readability: " + metric.getClass().getName());
+        // Labels used in the results:
+        String[] metricResultLabels = {
+            "Edge length variability: ",
+            "No. of edge crossings: ",
+            "Placement variability: ",
+            "Neighbor separation: ",
+            "Community blend: "
+        };
+        
+        // Execute each metric and join the results
+        StringBuilder resultBuilder = new StringBuilder();
+        for (int metric_i = 0; metric_i < metricInstances.length; metric_i++) {
+            Statistics metric = metricInstances[metric_i];
             metric.execute(gm, am);
-            result += metric_result_prefixes[metric_i] + metric.getReport() + "\n";
+            resultBuilder.append(metricResultLabels[metric_i]);
+            resultBuilder.append(metric.getReport());
+            resultBuilder.append(System.getProperty("line.separator"));
         }
+        result = resultBuilder.toString();
     }
 
     @Override
     public String getReport() {
         return result;
-    }
-
-    @Override
-    public boolean cancel() {
-        cancel = true;
-        return true;
-    }
-
-    @Override
-    public void setProgressTicket(ProgressTicket pt) {
-        progressTicket = pt;
     }
 }

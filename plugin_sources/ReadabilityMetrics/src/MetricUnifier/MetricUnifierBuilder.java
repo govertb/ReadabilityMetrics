@@ -1,16 +1,17 @@
 package MetricUnifier;
 
-import NodeOverlap.*;
 import org.gephi.statistics.spi.Statistics;
 import org.gephi.statistics.spi.StatisticsBuilder;
 import org.openide.util.lookup.ServiceProvider;
+
+/*  Benjamin Versteeg & Govert Brinkman (2015) */
 
 @ServiceProvider(service = StatisticsBuilder.class)
 public class MetricUnifierBuilder implements StatisticsBuilder {
 
     @Override
     public String getName() {
-        return "Metric for calculating the fraction of overlapping nodes.";
+        return "Readability Metric Unifier";
     }
     
     @Override

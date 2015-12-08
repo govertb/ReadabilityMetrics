@@ -5,32 +5,25 @@ import org.gephi.statistics.spi.Statistics;
 import org.gephi.statistics.spi.StatisticsUI;
 import org.openide.util.lookup.ServiceProvider;
 
+/*  Benjamin Versteeg & Govert Brinkman (2015) */
+
 @ServiceProvider(service = StatisticsUI.class)
 public class MetricUnifierUI implements StatisticsUI {
-    private MyMetricPanel panel;
-    private MetricUnifier metric_class;
+    private MetricUnifier metricClass;
 
     @Override
     public JPanel getSettingsPanel() {
-        return null; // hier nog eventueel gewenste metrics aanklikken
-        //panel = new MyMetricPanel();
-        //return panel;
+        return null;
     }
 
     @Override
     public void setup(Statistics statistics) {
-        this.metric_class = (MetricUnifier) statistics;
-        if(panel!=null) {
-            //panel.setDirected(myMetric.isDirected());
-        }
+        metricClass = (MetricUnifier) statistics;
     }
 
     @Override
     public void unsetup() {
-        if(panel!=null) {
-            //myMetric.setDirected(panel.isDirected());
-        }
-        panel = null;
+        // pass
     }
 
     @Override
@@ -45,12 +38,12 @@ public class MetricUnifierUI implements StatisticsUI {
 
     @Override
     public String getDisplayName() {
-        return "All readability metrics";
+        return "Readability Metric Unifier";
     }
 
     @Override
     public String getShortDescription() {
-        return "Executes all readability metrics.";
+        return "Executes all five readability metrics in a sequence.";
     }
 
     @Override
@@ -62,10 +55,4 @@ public class MetricUnifierUI implements StatisticsUI {
     public int getPosition() {
         return 800;
     }
-
-    private static class MyMetricPanel extends JPanel {
-        public MyMetricPanel() {
-        }
-    }
-
 }

@@ -1,24 +1,26 @@
-package FruEnergy;
+package NeighborSeparation;
 
 import org.gephi.statistics.spi.Statistics;
 import org.gephi.statistics.spi.StatisticsBuilder;
 import org.openide.util.lookup.ServiceProvider;
 
+/*  Benjamin Versteeg & Govert Brinkman (2015) */
+
 @ServiceProvider(service = StatisticsBuilder.class)
-public class FruEnergyMetricBuilder implements StatisticsBuilder {
+public class NeighborSeparationBuilder implements StatisticsBuilder {
 
     @Override
     public String getName() {
-        return "Calculates 'energy of the layout' according to fru91.";
+        return "Neighbor Separation";
     }
     
     @Override
     public Statistics getStatistics() {
-        return new FruEnergyMetric();
+        return new NeighborSeparation();
     }
 
     @Override
     public Class<? extends Statistics> getStatisticsClass() {
-        return FruEnergyMetric.class;
+        return NeighborSeparation.class;
     }
 }
