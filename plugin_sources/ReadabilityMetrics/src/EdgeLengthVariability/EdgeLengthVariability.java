@@ -13,7 +13,7 @@ import utils.math;
     We choose this statistic over, e.g., the standard deviation or variance since 
     it is normalized and thus allows us to compare regardless of the size of the
     frame in which the graph is drawn. A low coefficient would indicate little 
-    variability (uniformity), whereas a high coecient would indicate much 
+    variability (uniformity), whereas a high coefficient would indicate much 
     variability (non-uniformity).
 */
 
