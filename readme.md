@@ -1,8 +1,8 @@
 ## Gephi Readability Plugins
 
 This reposity contains the following plugins:
- - No. of edge-crossings
- - Edge-length variability
+ - No. of edge-crossings<br>
+ - Edge-length variability\n
  - Placement variability
  - Neighbor separation
  - Community Blending
