@@ -18,4 +18,5 @@ Measure the degree to which neighbors are grouped by determining the average dis
 **Community Blending**  
 Measure the degree to which different communities are separated (visually). First all communities are determined using Modularity, with its default resolution of 1.0. Then the standard deviation over all intra-community node pair distances (Euclidean) is considered relatively to the standard deviation over all node pair distances (Euclidean). This fraction the measure of how much communities are (geometrically) separated. Smaller values for the community blending metric indicate that communities are better separated (geometrically), whereas larger values indicate they are not.  
   
+  
 Finally, a plugin is contained, called *Metric Unifier*, which allows sequential execution of all five metrics. Which might be convenient in case of high repetition or a large graph (long waiting time).
