@@ -3,7 +3,7 @@ package MetricUnifier;
 import EdgeLengthVariability.EdgeLengthVariability;
 import NeighborSeparation.NeighborSeparation;
 import NumEdgeCrossings.NumEdgeCrossings;
-import CommunityBlend.CommunityBlend;
+import CommunityBlending.CommunityBlending;
 import PlacementVariability.PlacementVariability;
 import org.gephi.data.attributes.api.AttributeModel;
 import org.gephi.graph.api.GraphModel;
@@ -32,7 +32,7 @@ class MetricUnifier implements Statistics {
             new NumEdgeCrossings(),
             new PlacementVariability(),
             new NeighborSeparation(),
-            new CommunityBlend()
+            new CommunityBlending()
         };
         
         // Labels used in the results:
@@ -41,7 +41,7 @@ class MetricUnifier implements Statistics {
             "No. of edge crossings: ",
             "Placement variability: ",
             "Neighbor separation: ",
-            "Community blend: "
+            "Community blending: "
         };
         
         // Execute each metric and join the results

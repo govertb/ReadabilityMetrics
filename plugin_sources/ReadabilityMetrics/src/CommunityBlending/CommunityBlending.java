@@ -1,4 +1,4 @@
-package CommunityBlend;
+package CommunityBlending;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,7 +26,7 @@ import utils.math;
     advise to apply this metric only to the giant component.
 */
 
-public class CommunityBlend implements Statistics {
+public class CommunityBlending implements Statistics {
     // Number of times to repeat interCommunityDistanceStdDev method.
     static final int NUM_RUNS = 10;
     public String result;

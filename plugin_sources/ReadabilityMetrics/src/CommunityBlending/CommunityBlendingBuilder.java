@@ -1,4 +1,4 @@
-package CommunityBlend;
+package CommunityBlending;
 
 import org.gephi.statistics.spi.Statistics;
 import org.gephi.statistics.spi.StatisticsBuilder;
@@ -7,20 +7,20 @@ import org.openide.util.lookup.ServiceProvider;
 /*  Benjamin Versteeg & Govert Brinkman (2015) */
 
 @ServiceProvider(service = StatisticsBuilder.class)
-public class CommunityBlendBuilder implements StatisticsBuilder {
+public class CommunityBlendingBuilder implements StatisticsBuilder {
 
     @Override
     public String getName() {
-        return "Community Blend";
+        return "Community Blending";
     }
     
     @Override
     public Statistics getStatistics() {
-        return new CommunityBlend();
+        return new CommunityBlending();
     }
 
     @Override
     public Class<? extends Statistics> getStatisticsClass() {
-        return CommunityBlend.class;
+        return CommunityBlending.class;
     }
 }

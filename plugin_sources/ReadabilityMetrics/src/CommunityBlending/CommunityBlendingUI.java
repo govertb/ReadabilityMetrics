@@ -1,4 +1,4 @@
-package CommunityBlend;
+package CommunityBlending;
 
 import javax.swing.JPanel;
 import org.gephi.statistics.spi.Statistics;
@@ -8,8 +8,8 @@ import org.openide.util.lookup.ServiceProvider;
 /*  Benjamin Versteeg & Govert Brinkman (2015) */
 
 @ServiceProvider(service = StatisticsUI.class)
-public class CommunityBlendUI implements StatisticsUI {
-    private CommunityBlend metricClass;
+public class CommunityBlendingUI implements StatisticsUI {
+    private CommunityBlending metricClass;
 
     @Override
     public JPanel getSettingsPanel() {
@@ -18,7 +18,7 @@ public class CommunityBlendUI implements StatisticsUI {
 
     @Override
     public void setup(Statistics statistics) {
-        metricClass = (CommunityBlend) statistics;
+        metricClass = (CommunityBlending) statistics;
     }
 
     @Override
@@ -28,7 +28,7 @@ public class CommunityBlendUI implements StatisticsUI {
 
     @Override
     public Class<? extends Statistics> getStatisticsClass() {
-        return CommunityBlend.class;
+        return CommunityBlending.class;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class CommunityBlendUI implements StatisticsUI {
 
     @Override
     public String getDisplayName() {
-        return "Community Blend";
+        return "Community Blending";
     }
 
     @Override
