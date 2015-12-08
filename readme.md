@@ -3,13 +3,6 @@ Readability Metrics
 
 A certain graph can be less or more 'readable'; information contained in a graph can be percepted with a degree ease. In order to quantify to which degree a certain graph is 'readable', we defined a set of five so called readability metrics. The metrics are developed as plugins for the network visualization tool called Gephi.  See [the Gephi Wiki](https://github.com/gephi/gephi/wiki/Plugin-Quick-Start "Gephi Plugin Quick Start") for information on how to install these.  
 
-**Readability metrics:**  
-- No. of edge-crossings  
-- Edge-length variability  
-- Placement variability  
-- Neighbor separation  
-- Community Blending  
-
 ***No. of edge-crossings***  
 Quantify the degree to which a graph is visually blurred due to edges by counting the number of crossings/intersections between all edges.  
 
@@ -25,4 +18,4 @@ Measure the degree to which neighbors are grouped by determining the average dis
 **Community Blending**  
 Measure the degree to which different communities are separated (visually). First all communities are determined using Modularity, with its default resolution of 1.0. Then the standard deviation over all intra-community node pair distances (Euclidean) is considered relatively to the standard deviation over all node pair distances (Euclidean). This fraction the measure of how much communities are (geometrically) separated. Smaller values for the community blending metric indicate that communities are better separated (geometrically), whereas larger values indicate they are not.  
   
-Finally, a plugin is contained, called *Metric Unifier*, which allows sequential execution of all five metrics. Which might be convenient in case of high repetition or a large graph (long waiting time).  
+Finally, a plugin is contained, called *Metric Unifier*, which allows sequential execution of all five metrics. Which might be convenient in case of high repetition or a large graph (long waiting time).
