@@ -1,7 +1,7 @@
 Readability Metrics for [Gephi](http://www.gephi.org)
 =====================================================
 
-A certain graph layout can be less or more 'readable'; information contained in a graph can be percepted with a degree ease. In order to quantify to which degree a certain graph is 'readable', we defined a set of five so called readability metrics. The metrics are developed as plugins for the network visualization tool called Gephi.  See [the Gephi Wiki](https://github.com/gephi/gephi/wiki/Plugin-Quick-Start "Gephi Plugin Quick Start") for information on how to install these.  
+A certain graph layout can be less or more 'readable'; information contained in a graph can be percepted with a certain degree of ease. In order to quantify to which degree a certain graph is 'readable', we defined a set of five so called readability metrics. The metrics are developed as plugins for the network visualization tool called Gephi.  See [the Gephi Wiki](https://github.com/gephi/gephi/wiki/Plugin-Quick-Start "Gephi Plugin Quick Start") for information on how to install these.  
 
 ***No. of edge-crossings***  
 Quantify the degree to which a graph is visually blurred due to edges by counting the number of crossings/intersections between all edges.  
